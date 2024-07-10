@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #2b2a33;
+  color: white;
+}
+
+form {
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  label {
+    font-size: 100px;
+    padding-bottom: 25px;
+  }
+  p {
+    color: red;
+    font-size: 20px;
+  }
+  input {
+    width: 75vw;
+    padding: 10px;
+    margin-bottom: 25px;
+    font-size: 25px;
+  }
+  button {
+    --color: white;
+    font-family: inherit;
+    display: inline-block;
+    width: 6em;
+    height: 2.6em;
+    line-height: 2.5em;
+    overflow: hidden;
+    cursor: pointer;
+    margin: 20px;
+    font-size: 17px;
+    z-index: 1;
+    color: var(--color);
+    border: 2px solid var(--color);
+    border-radius: 6px;
+    position: relative;
+    background-color: #2b2a33;
+    transition: all 0.3s ease-in;
+  }
+
+  button::before {
+    position: absolute;
+    content: "";
+    background: var(--color);
+    width: 150px;
+    height: 200px;
+    z-index: -1;
+    border-radius: 50%;
+  }
+
+  button:hover {
+    color: #2b2a33;
+  }
+
+  button:before {
+    top: 100%;
+    left: 100%;
+    transition: 0.3s all;
+  }
+
+  button:hover::before {
+    top: -30px;
+    left: -30px;
+  }
+}
+
+.logs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  height: 100vh;
+  scroll-snap-align: start;
+  h2 {
+    font-size: 5rem;
+    text-align: center;
+    text-align: center;
+    padding: 10px;
+    outline: none;
+  }
+  .edited {
+    font-weight: bolder;
+  }
+}
+// .black h2{
+// text-shadow: 0px 0px 1px black;  
+// }
+// .white h2{
+// text-shadow: 0px 0px 1px white;  
+// }
+
+article {
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+  overflow-y: scroll;
+}
