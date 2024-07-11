@@ -10,7 +10,7 @@ const Input = forwardRef(({ set }, ref) => {
       setErrorText("Text must be under 255 characters.");
       return;
     }
-    const data = { body: input };
+    const data = { body: input, userData: navigator.platform };
     console.log(await fetchHandler("/api/logs", getPostOptions(data)));
     set((await fetchHandler("/api/logs"))[0]);
     setInput("");

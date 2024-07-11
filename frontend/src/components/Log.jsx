@@ -31,7 +31,7 @@ const Log = forwardRef(({ obj, refresh }, ref) => {
         (
           await fetchHandler(
             `/api/logs/${obj.id}`,
-            getPatchOptions(e.target.innerText)
+            getPatchOptions({body:e.target.innerText, userData: navigator.platform})
           )
         )[0]
       );
@@ -50,6 +50,7 @@ const Log = forwardRef(({ obj, refresh }, ref) => {
       </h2>
       <p>{formatDateTime(obj.time)}</p>
       {obj.edited && <p className="edited">Edited</p>}
+      <p>{obj.userData}</p>
     </div>
   );
 });

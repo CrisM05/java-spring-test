@@ -24,6 +24,8 @@ public class Log {
   private String body;
   @Column(name = "time")
   private LocalDateTime time;
+  @Column(name = "user-data")
+  private String userData;
 
   @PrePersist
   public void prePersist() {
@@ -56,6 +58,10 @@ public class Log {
     return edited;
   }
 
+  public String getUserData() {
+    return userData;
+  }
+
   // public Time getTime() {
   // return time;
   // }
@@ -64,9 +70,17 @@ public class Log {
     this.body = newBody;
   }
 
+  public void setUserData(String userData) {
+    this.userData = userData;
+  }
+
   public void update() {
     this.time = LocalDateTime.now();
     this.edited = true;
   }
+
+public void updateUserData(String newUserData) {
+  this.userData = newUserData;
+};
 
 }

@@ -56,6 +56,7 @@ public class LogController {
     Log currLog = optionalLog.get();
     currLog.setBody(newLog.getBody());
     currLog.update();
+    currLog.updateUserData(newLog.getUserData());
     logRepository.save(currLog);
     return new ResponseEntity<>(currLog,HttpStatus.OK);
   }

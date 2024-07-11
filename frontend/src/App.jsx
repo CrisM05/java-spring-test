@@ -30,6 +30,7 @@ const App = () => {
     }
   };
   useEffect(() => {
+    console.log("User-Agent: " + navigator.userAgent);
     getLogs();
   }, []);
   return (
